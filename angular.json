@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "tcs"
+    }
+  },
+  "defaultProject": "tcs",
+  "cli": {
+    "analytics": "73fc9055-0a24-42be-ac92-6886ff774444"
+  }
 }
