@@ -1,0 +1,21 @@
+<h1>Lista de Productos</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Imagen</th>
+      <th>Nombre</th>
+      <th>Tipo</th>
+      <th>Precio</th>
+      <th>Stock</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let p of productos">
+      <td><img [src]="p.image" [alt]="p.nombre"></td>
+      <td>{{p.nombre}}</td>
+      <td>{{p.tipo}}</td>
+      <td>{{p.precio}}</td>
+      <td>{{p.stock}}</td>
+    </tr>
+  </tbody>
+</table>
