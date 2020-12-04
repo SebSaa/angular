@@ -17,9 +17,9 @@
       <td>{{p.tipo}}</td>
       <td>{{p.precio | currency}}</td>
       <td><span class="badge badge-warning" *ngIf="p.stock==0">SIN STOCK</span></td>
-      <td><button class="btn btn-primary btn-sm" (click)="abajoCant(p)">-</button>
-        <input type="text" class="text" name="" id="" [(ngModel)]= "p.cant" (keyup)="cambiaCant($event, p)">
-        <button class="btn btn-primary btn-sm" (click)="arribaCant(p)">+</button></td>
+      <td>
+        <app-input-integer [(cantidad)]="p.cant" [max]="p.stock" *ngIf="p.stock" (maxVta)="maxVta($event)"></app-input-integer>
+      </td>
     </tr>
   </tbody>
 </table>

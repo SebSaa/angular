@@ -12,8 +12,8 @@ export class ProductoListComponent implements OnInit {
     {
       nombre : "10/10",
       tipo : "Simetrico",
-      precio : 100,
-      stock : 200,
+      precio : 50,
+      stock : 5,
       image : "assets/images/corona.jpg",
       oferta: false,
       cant: 0,
@@ -21,8 +21,8 @@ export class ProductoListComponent implements OnInit {
     {
       nombre : "10/10",
       tipo : "Simetrico",
-      precio : 100,
-      stock : 200,
+      precio : 60,
+      stock : 5,
       image : "assets/images/corona.jpg",
       oferta: true,
       cant: 0,
@@ -30,7 +30,7 @@ export class ProductoListComponent implements OnInit {
     {
       nombre : "10/10",
       tipo : "Simetrico",
-      precio : 100,
+      precio : 70,
       stock : 0,
       image : "assets/images/corona.jpg",
       oferta: false,
@@ -42,20 +42,8 @@ export class ProductoListComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  arribaCant(p : Producto) : void{
-    if (p.cant < p.stock){
-      p.cant++;
-    }
-  }
-
-  abajoCant(p : Producto) : void {
-    if (p.cant > 0) {
-      p.cant--;
-    }
-  }
-
-  cambiaCant(event, p : Producto) : void {
-    event.preventDefault;
+  maxVta (m : string) {
+    alert(m);
   }
 
 
