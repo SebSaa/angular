@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductoCarritoService } from '../producto-carrito.service';
 import { Producto } from './Producto';
 
 @Component({
@@ -10,36 +11,45 @@ export class ProductoListComponent implements OnInit {
 
   productos : Producto[] = [
     {
-      nombre : "10/10",
-      tipo : "Simetrico",
-      precio : 50,
+      nombre : "Arroz",
+      tipo : "doble carolina",
+      precio : 850,
       stock : 5,
       image : "assets/images/corona.jpg",
       oferta: false,
       cant: 0,
     },
     {
-      nombre : "10/10",
-      tipo : "Simetrico",
+      nombre : "Fideo",
+      tipo : "tallarin",
       precio : 60,
-      stock : 5,
+      stock : 4,
       image : "assets/images/corona.jpg",
       oferta: true,
       cant: 0,
     },
     {
-      nombre : "10/10",
-      tipo : "Simetrico",
-      precio : 70,
-      stock : 0,
+      nombre : "Lenteja",
+      tipo : "natural",
+      precio : 55,
+      stock : 1,
       image : "assets/images/corona.jpg",
       oferta: false,
       cant: 0,
     },
   ];
-  constructor() { }
+
+  constructor(private cart : ProductoCarritoService) {
+
+  }
 
   ngOnInit(): void {
+  }
+
+  addToCart(producto : Producto): void {
+    this.cart.addToCart(producto);
+    producto.stock -= producto.cant;
+    producto.cant = 0;
   }
 
   maxVta (m : string) {

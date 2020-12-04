@@ -7,6 +7,7 @@
       <th>Tipo</th>
       <th>Precio</th>
       <th>Stock</th>
+      <th>Cant</th>
       <th>Compras</th>
     </tr>
   </thead>
@@ -20,6 +21,7 @@
       <td>
         <app-input-integer [(cantidad)]="p.cant" [max]="p.stock" *ngIf="p.stock" (maxVta)="maxVta($event)"></app-input-integer>
       </td>
+      <td><button class="btn btn-primary" (click)="addToCart(p)">Comprar</button></td>
     </tr>
   </tbody>
 </table>
