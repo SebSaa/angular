@@ -4,4 +4,6 @@ export interface Producto {
   precio: number;
   stock: number;
   image: string;
+  oferta: boolean;
+  cant: number;
 }
